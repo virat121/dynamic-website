@@ -3,48 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hackathon Registration Form</title>
+    <title>Hackathon Registration</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>Hackathon Registration Form</h1>
+        <h1>Hackathon Registration</h1>
         <form id="registrationForm">
-            <div class="form-group">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="phone">Phone:</label>
-                <input type="tel" id="phone" name="phone" required>
-            </div>
-            <div class="form-group">
-                <label for="college">College/University:</label>
-                <input type="text" id="college" name="college" required>
-            </div>
-            <div class="form-group">
-                <label for="teamName">Team Name:</label>
-                <input type="text" id="teamName" name="teamName" required>
-            </div>
-            <div class="form-group">
-                <label for="teamSize">Team Size:</label>
-                <input type="number" id="teamSize" name="teamSize" min="1" max="5" required>
-            </div>
-            <div class="form-group">
-                <label for="hackathon">Hackathon:</label>
-                <select id="hackathon" name="hackathon" required>
-                    <option value="hackathon1">Hackathon 1</option>
-                    <option value="hackathon2">Hackathon 2</option>
-                    <option value="hackathon3">Hackathon 3</option>
-                </select>
-            </div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br><br>
+            
+            <label for="registrationNumber">Registration Number:</label>
+            <input type="text" id="registrationNumber" name="registrationNumber" required><br><br>
+            
+            <label for="branch">Branch:</label>
+            <input type="text" id="branch" name="branch" required><br><br>
+            
             <button type="submit">Register</button>
         </form>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>

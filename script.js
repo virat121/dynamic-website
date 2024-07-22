@@ -1,18 +1,30 @@
 document.getElementById('registrationForm').addEventListener('submit', function(event) {
-  event.preventDefault(); // Prevent the default form submission
+  event.preventDefault(); // Prevent the form from submitting the default way
 
-  // Get form values
   const name = document.getElementById('name').value;
-  const email = document.getElementById('email').value;
-  const phone = document.getElementById('phone').value;
-  const college = document.getElementById('college').value;
-  const teamName = document.getElementById('teamName').value;
-  const teamSize = document.getElementById('teamSize').value;
-  const hackathon = document.getElementById('hackathon').value;
+  const registrationNumber = document.getElementById('registrationNumber').value;
+  const branch = document.getElementById('branch').value;
 
-  // Display form values for demonstration purposes (you can send these values to a server)
-  alert(`Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nCollege: ${college}\nTeam Name: ${teamName}\nTeam Size: ${teamSize}\nHackathon: ${hackathon}`);
+  const data = {
+      name: name,
+      registrationNumber: registrationNumber,
+      branch: branch
+  };
 
-  // Reset the form
-  document.getElementById('registrationForm').reset();
+  fetch('YOUR_API_GATEWAY_ENDPOINT', {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+  })
+  .then(response => response.json())
+  .then(data => {
+      console.log('Success:', data);
+      alert('Registration successful!');
+  })
+  .catch((error) => {
+      console.error('Error:', error);
+      alert('Registration failed.');
+  });
 });
